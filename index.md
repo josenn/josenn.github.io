@@ -1,5 +1,3 @@
-# Jonathan Renn
-
 
 ### Markdown
 
