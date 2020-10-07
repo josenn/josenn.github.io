@@ -4,7 +4,8 @@
     <title>Jonathan Renn's Portfolio</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <div class="header">
@@ -14,50 +15,63 @@
 
     <!-- NAVBAR-->
     <div class="navbar">
-      <a href="#" class="active">Projects</a>
-      <a href="#">Github</a>
-      <a href="#">Link</a>
-      <a href="#" class="right">Link</a>
+      <a href="https://github.com/josenn" target="_blank"><img src="Images\GitHub-Mark\PNG\GitHub-Mark-Light-32px.png" title="Takes you to my Github profile"></a>
+      <a href="mailto:jonathanrenn@protonmail.com"><img src="Images\envelope.png"></a>
+    </div>
+    <button class="tablink" onclick="openPage('Home', this, 'red')">
+      Home
+    </button>
+    <button
+      class="tablink"
+      onclick="openPage('News', this, 'green')"
+      id="defaultOpen"
+    >
+      News
+    </button>
+    <button class="tablink" onclick="openPage('Contact', this, 'blue')">
+      Contact
+    </button>
+    <button class="tablink" onclick="openPage('About', this, 'orange')">
+      About
+    </button>
+
+    <div id="Home" class="tabcontent">
+      <h3>Home</h3>
+      <p>Home is where the heart is..</p>
     </div>
 
-    <div class="row">
-      <div class="side">
-        <h2>About Me</h2>
-        <h5>Photo of me:</h5>
-        <div class="fakeimg" style="height: 200px">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-        <h3>More Text</h3>
-        <p>Lorem ipsum dolor sit ame.</p>
-        <div class="fakeimg" style="height: 60px">Image</div>
-        <br />
-        <div class="fakeimg" style="height: 60px">Image</div>
-        <br />
-        <div class="fakeimg" style="height: 60px">Image</div>
-      </div>
-      <div class="main">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <div class="fakeimg" style="height: 200px">Image</div>
-        <p>Some text..</p>
-        <p>
-          Sunt in culpa qui officia deserunt mollit anim id est laborum
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco.
-        </p>
-        <br />
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Sep 2, 2017</h5>
-        <div class="fakeimg" style="height: 200px">Image</div>
-        <p></p>
-        <p>
-          
-        </p>
-      </div>
+    <div id="News" class="tabcontent">
+      <h3>News</h3>
+      <p>Some news this fine day!</p>
     </div>
 
-    <div class="footer">
-      <h2>Footer</h2>
+    <div id="Contact" class="tabcontent">
+      <h3>Contact</h3>
+      <p>Get in touch, or swing by for a cup of coffee.</p>
     </div>
+
+    <div id="About" class="tabcontent">
+      <h3>About</h3>
+      <p>Who we are and what we do.</p>
+    </div>
+
+    <script>
+      function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
   </body>
 </html>
