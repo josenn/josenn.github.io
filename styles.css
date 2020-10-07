@@ -86,16 +86,16 @@ html {
   height: 100%;
 }
 
-#Home {
+#About {
   background-color: red;
 }
-#News {
+#Project1 {
   background-color: green;
 }
-#Contact {
+#Project2 {
   background-color: blue;
 }
-#About {
+#Project3 {
   background-color: orange;
 }
 
